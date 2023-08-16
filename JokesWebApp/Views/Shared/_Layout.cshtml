@@ -7,12 +7,61 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JokesWebApp.styles.css" asp-append-version="true" />
+
+    <!-- Add custom CSS styles -->
+    <style>
+        /* Header Styles */
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Navigation Link Styles */
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+        }
+        
+        /* Animations */
+        
+        
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+        
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JokesWebApp</a>
+                <a class="navbar-brand animated fadeIn" asp-area="" asp-controller="Home" asp-action="Index">JokesWebApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,8 +80,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Jokes" asp-action="ShowSearchForm">Search</a>
                         </li>
-
-
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -45,7 +92,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
             &copy; 2023 - JokesWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

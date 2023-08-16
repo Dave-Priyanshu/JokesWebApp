@@ -1,39 +1,52 @@
-﻿@model JokesWebApp.Models.Joke
+﻿@model JokesWebApp.Models.Joke//added css with the help of chatgpt
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css"> <!-- Include your custom CSS file here -->
+</head>
+<body>
+    <h1 class="text-center">Jokes Application - Edit</h1>
 
-<h4>Joke</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="JokeQuestion" class="control-label"></label>
-                <input asp-for="JokeQuestion" class="form-control" />
-                <span asp-validation-for="JokeQuestion" class="text-danger"></span>
+    <div class="container">
+        <h4>Edit Joke</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="JokeQuestion" class="control-label"></label>
+                        <input asp-for="JokeQuestion" class="form-control" />
+                        <span asp-validation-for="JokeQuestion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="JokeAnswer" class="control-label"></label>
+                        <input asp-for="JokeAnswer" class="form-control" />
+                        <span asp-validation-for="JokeAnswer" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="JokeAnswer" class="control-label"></label>
-                <input asp-for="JokeAnswer" class="form-control" />
-                <span asp-validation-for="JokeAnswer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</body>
+</html>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

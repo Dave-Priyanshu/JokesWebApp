@@ -1,6 +1,100 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacy Policy"; //added css with the help of chatgpt
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>This page is running on local server. Security should not be much of a problem.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - JokesWebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JokesWebApp.styles.css" asp-append-version="true" />
+
+    <!-- Add custom CSS styles -->
+    <style>
+        /* Privacy Policy Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .privacy-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1a0dab;
+        }
+
+        .privacy-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        .privacy-link {
+            color: #4285f4;
+            text-decoration: none;
+        }
+
+            .privacy-link:hover {
+                text-decoration: underline;
+            }
+
+        .privacy-logo {
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .privacy-service {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Header code here (same as before) -->
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="privacy-container">
+                <h1 class="privacy-title">@ViewData["Title"]</h1>
+                
+                </div>
+                
+                <div class="privacy-service">
+                <img src="D:\Asp Practicals\JokesWebApp\JokesWebApp\img\laugh.png" alt="Laughing" class="privacy-logo">
+
+                    <p class="privacy-text">
+                        Protecting Your Information: We implement a variety of security measures to maintain the safety of your personal information when you use our services. Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems and are required to keep the information confidential.
+                        <br>
+                        We strive to ensure that your personal information is kept accurate, complete, and up to date. You have the right to access, correct, or delete your personal information at any time. If you have any questions or concerns about your personal information, please <a class="privacy-link" href="/Contact">contact us</a>.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer">
+        <!-- Footer code here (same as before) -->
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

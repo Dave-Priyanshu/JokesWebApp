@@ -1,26 +1,69 @@
-﻿<h4>Search for a joke</h4>
+﻿@model JokesWebApp.Models.Joke
 
-<h4>Joke</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="ShowSearchResult">
-            
-            
-            <div class="form-group">
-                <label for=" = SearchPhrase" class="control-label"></label>
-                <input nmae="SearchPhrase" class="form-control" />
-               
+@{
+    ViewData["Title"] = "Search";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Search Page Styles */
+        .search-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .joke-details {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input {
+            border-color: #3498db;
+        }
+
+        .search-button {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Media Query for Small Screens */
+       
+    </style>
+</head>
+<body>
+    <h4 class="search-title">Search for a Joke</h4>
+
+    <div class="joke-details">
+        <h4>Joke</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="ShowSearchResult">
+                    <div class="form-group">
+                        <label for="SearchPhrase" class="control-label">Enter Keywords</label>
+                        <input name="SearchPhrase" class="form-control search-input" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary search-button">Search</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Search" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-
+    <div class="back-link">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>
